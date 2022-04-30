@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to NISHA FOODIES - Scriptedway pipeline project demo practice04/03/2022</h1>
-<h1 align="center"> Welcome  ... to NISHA FOODIES .......We have a Quality food items. , Opens on weekdays  - 6 AM to 7.30 PM IST . MSS- Very Good Training center for DevOps with AWS in Haveri and also for Job Assitance Job Support also...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google.</h1>
+<h1 align="center"> Welcome  ... to NISHA FOODIES .......We have a Quality food items. , Opens on weekdays  - 6 AM to 7.30 PM IST . NF- Very Good Taste in Haveri and parcel facility...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google.</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
