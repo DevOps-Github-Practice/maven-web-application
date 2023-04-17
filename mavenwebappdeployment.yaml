@@ -4,7 +4,7 @@ metadata:
   name: mavenwebappdeployment
 spec:
   revisionHistoryLimit: 10
-  replicas: 2
+  replicas: 1
   strategy:
     type: Recreate
   selector:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mavenwebappcontainer
-          image: dockerhandson/maven-web-application:TAG
+          image: 858256790130.dkr.ecr.ap-southeast-2.amazonaws.com/myecrrepo:222022971fb014f9888be1831e3e7dfc4117f219
           ports:
             - containerPort: 8080
           resources:
