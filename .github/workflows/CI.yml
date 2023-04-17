@@ -2,10 +2,7 @@ name: Deploy to EKS Maven-web-application
 
 on:
   push:
-    branches:
-      - dev
-      - qa
-      - main
+    branches: [ main ]
     
   pull_request:
     branches: [ main ]
@@ -84,8 +81,4 @@ jobs:
         
       - name: Deploy to eks
         run: |
-          kubectl apply -f deployment.yaml
-          
-    
-    
-  
+          kubectl apply -f mavenwebappdeployment.yaml 
