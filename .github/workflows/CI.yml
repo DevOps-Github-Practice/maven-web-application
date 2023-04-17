@@ -53,6 +53,39 @@ jobs:
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+  Deploy-to-EKS: 
+    name: Deploy to EKS
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v3.5.2
+        
+      - name: Configure AWS Credentials For GitHub Actions
+  # You may pin to the exact commit or the version.
+  # uses: aws-actions/configure-aws-credentials@e1e17a757e536f70e52b5a12b2e8d1d1c60e04ef
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+    # AWS Access Key ID. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID }}
+    # AWS Secret Access Key. This input is required if running in the GitHub hosted environment. It is optional if running in a self-hosted environment that already has AWS credentials, for example on an EC2 instance.
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY }}
+    # AWS Region, e.g. us-east-2
+          aws-region: ${{secrets.AWS_REGION }}
+          
+      - name: Kubectl tool installer
+        uses: Azure/setup-kubectl@v3
+        with:
+    # Version of kubectl
+         version: 'v1.25.8' # default is latest stable
+        id: install
+      
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --name my-cluster
+        
+      - name: Deploy to eks
+        run: |
+          kubectl apply -f deployment.yaml
+          
     
     
   
