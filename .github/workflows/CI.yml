@@ -84,3 +84,7 @@ jobs:
       - name: Deploy to eks
         run: |
           kubectl apply -f mavenwebappdeployment.yaml 
+          
+      - name: Logout ECR
+        if: always()
+        run: docker logout ${{ steps.login-ecr.outputs.registry }}
