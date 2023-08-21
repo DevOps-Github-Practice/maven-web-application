@@ -1,4 +1,4 @@
-name: Deploy to EKS Maven-web-application
+name: Send notification via e-mail
 
 on:
   push:
